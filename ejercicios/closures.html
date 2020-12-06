@@ -7,7 +7,63 @@
         <p><em>Abre la consola</em></p>
 
         <script>
+            // Closures
+            // printColor
 
+            // IIFE
+            // (function() {
+            //     let color = 'green';
+
+            //     function printColor() {
+            //         console.log(color);
+            //     }
+
+            //     printColor();
+            // })();
+            
+            // Funciones que regresan funciones
+            // function makeColorPrinter(color) {
+            //     let colorMessage = `The color is ${color}`;
+
+            //     return function() {
+            //         console.log(colorMessage);
+            //     }
+            // }
+
+            // let greenColorPrinter = makeColorPrinter("green");
+            // console.log(greenColorPrinter())
+
+            // variables "privadas" -> No se pueden leer ni modificar directamente, se tiene
+            // que hacer mediante unas funciones que estan en el objeto que se regresa
+            function makeCounter(n) {
+                let count = n;
+
+                return {
+                    increase: function() {
+                        count = count + 1;
+                    },
+                    decrease: function() {
+                        count = count - 1;
+                    },
+                    getCount: function() {
+                        return count;
+                    }
+                };
+            }
+
+            let counter = makeCounter(7);
+
+            console.log('The count is:', counter.getCount());
+            counter.increase();
+            console.log('The count is:', counter.getCount());
+            counter.decrease();
+            counter.decrease();
+            counter.decrease();
+            counter.decrease();
+            console.log('The count is:', counter.getCount());
+
+            counter.count = 0; // No se puede modificar la variable directamente
+            console.log('The count is:', counter.getCount());
         </script>
     </body>
 </html>
