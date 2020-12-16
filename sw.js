@@ -25,10 +25,10 @@ async function precache() {
         '/index.html',
         '/assets/index.js',
         '/assets/MediaPlayer.js',
+        '/assets/index.css',
+        '/assets/videoPrueba.mp4',        
         '/assets/plugins/AutoPlay.js',
         '/assets/plugins/AutoPause.js',
-        '/assets/index.css',
-        '/assets/videoPrueba.mp4',
     ])
 }
 
